@@ -1,0 +1,47 @@
+[
+  {
+    "key": "1",
+    "creatorName": {
+      "name": "John Doe",
+      "description": "followers: 1M",
+      "profile": "https://jodilogik.com/wp-content/uploads/2016/05/people.png"
+    },
+    "tags": ["Tech", "Reviews"],
+    "productName": "Super Gadget 3000",
+    "status": "Content Pending",
+    "videoPosted": 2,
+    "livestreams": 5,
+    "cfr": 12.5,
+    "gmv": 50000
+  },
+  {
+    "key": "2",
+    "creatorName": {
+      "name": "Jane Smith",
+      "description": "followers: 1M",
+      "profile": "https://jodilogik.com/wp-content/uploads/2016/05/people.png"
+    },
+    "tags": ["Lifestyle", "Vlogs"],
+    "productName": "Eco-friendly Water Bottle",
+    "status": "Shipped",
+    "videoPosted": 1,
+    "livestreams": 2,
+    "cfr": 8.2,
+    "gmv": 15000
+  },
+  {
+    "key": "3",
+    "creatorName": {
+      "name": "Jane Smith",
+      "description": "followers: 1M",
+      "profile": "https://jodilogik.com/wp-content/uploads/2016/05/people.png"
+    },
+    "tags": [],
+    "productName": "Eco-friendly Water Bottle",
+    "status": "Delivered",
+    "videoPosted": 1,
+    "livestreams": 2,
+    "cfr": 8.2,
+    "gmv": 15000
+  }
+]

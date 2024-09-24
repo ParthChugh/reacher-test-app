@@ -1,0 +1,65 @@
+export const Api = {
+	auth: {
+		me: 'api/customers/me',
+		login: 'api/auth/login',
+		register: 'api/auth/register',
+		refreshToken: 'api/auth/refresh-token',
+	},
+	customer: {
+		getList: 'api/customer/list',
+		register: 'api/customer/register',
+		editBasicInfo: 'api/customer/edit',
+		basicInfo: 'api/customer/basic-info',
+	},
+	automations: {
+		getList: 'api/automations/list',
+		create: 'api/automations/create',
+		remove: 'api/automations/remove',
+		basicInfo: 'api/customer/basic-info',
+		stop: 'api/automations/stop',
+		update: 'api/automations/update',
+		followupStop: 'api/followups/stop',
+		start: 'api/automations/start',
+		followupStart: 'api/followups/start',
+		repliesStart: 'api/replies/start',
+	},
+	statistics: {
+		stats: 'api/statistics',
+		messages: 'api/messages/date_range',
+		replies: 'api/replies/date_range',
+		messagedCreators: '/api/dashboard/messaged_creators',
+		getEmailedCreators: '/api/dashboard/emailed_creators',
+	},
+	shops: {
+		list: 'api/shops/list',
+		create: 'api/shops/create',
+		archive: 'api/shops/archive',
+		update: 'api/shops/update',
+		updateCreatorsToOmit: '/api/shops/set_creators_to_omit',
+	},
+	assistant: {
+		getStatusTable: '/api/assistant/data',
+		updateAction: '/api/assistant/actions/update',
+		startAssistant: '/api/assistant/start',
+		getMessageSettings: '/api/shop_messages/get',
+		updateMessageSettings: '/api/shop_messages/update',
+		updateContentGuideSetting: '/api/shop_messages/content_guides/update',
+		getAssistantHistory: '/api/assistant/history',
+		removeContentGuide: '/api/shop_messages/content_guides/remove',
+	},
+	stripePayment: {
+		createCheckoutSession: '/api/stripe/create-checkout-session',
+		getSession: (sessionId) => `/api/stripe/session/${sessionId}`,
+		createPortalSession: '/api/stripe/create-portal-session',
+		getRenevalDates: '/api/stripe/get-subscription-reneval-dates',
+	},
+	emailAutomations: {
+		getList: '/api/email_automations/list',
+		create: '/api/email_automations/create',
+		remove: '/api/email_automations/delete',
+		edit: '/api/email_automations/edit',
+		uploadImage: '/api/email_automations/upload_image',
+		stop: '/api/email_automations/stop',
+		start: '/api/email_automations/start'
+	}
+};

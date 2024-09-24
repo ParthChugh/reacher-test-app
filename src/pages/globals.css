@@ -1,0 +1,186 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+:root {
+  --foreground-rgb: 0, 0, 0; /* Black text color */
+  --background-start-rgb: 255, 255, 255; /* White background color */
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 0, 0, 0; /* Black text color */
+    --background-start-rgb: 243, 244, 246; /* grey background color */
+    --background-end-rgb: 243, 244, 246;
+  }
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.rounded-extra {
+  border-radius: 2rem;
+}
+
+.bg-gradient-to-r {
+  background-image: linear-gradient(rgba(48, 169, 243, 1), rgba(247, 55, 134, 1));
+}
+
+.authentication-form-container {
+  width: 520px;
+  height: 699px;
+}
+
+.menuItem-active {
+  background-color: rgba(27, 89, 248, 0.1);
+  color: #1B59F8;
+}
+
+.menuItem-active-text {
+  color: #1B59F8;
+  /* opacity: 10%; */
+}
+
+.positive-status-color {
+ color: #32A866;
+}
+.negative-status-color {
+  color: #A83232;
+ }
+
+ .automation-start-button-bg {
+  background-color: #7FD569;
+ }
+
+ .automation-add-new-button-bg {
+  background-color: #008AD8;
+ }
+
+ .material-select label {
+  color: #aaaaaa;
+  top: -3px;
+ }
+
+ .material-select button {
+  height: 50px;
+ }
+
+ .material-select button div {
+  top: 58%;
+ }
+
+
+ .automation-finish-and-save-bg {
+  background-color: #F73786;
+ }
+
+ /* .material-select-focus label {
+  visibility: hidden;
+ }
+
+ .material-select-blur label {
+   visibility: visible;
+ } */
+
+ .lexical h1 {
+  @apply block font-sans text-4xl font-semibold leading-[1.3] tracking-normal text-inherit antialiased;
+}
+
+.lexical h2 {
+  @apply block font-sans text-3xl font-semibold leading-snug tracking-normal text-inherit antialiased;
+}
+
+.lexical p {
+  @apply block font-sans text-base font-normal leading-relaxed text-inherit antialiased;
+}
+
+.lexical ul {
+  @apply list-inside list-disc;
+}
+
+.lexical ol {
+  @apply list-inside list-decimal;
+}
+
+.lexical li {
+  @apply font-sans text-base font-normal leading-relaxed text-inherit antialiased;
+}
+
+.lexical blockquote {
+  @apply block font-sans text-xl font-normal leading-relaxed text-inherit antialiased;
+}
+
+.lexical code {
+  @apply rounded-md bg-gray-900/[0.1] px-1 py-0.5 text-sm font-normal text-gray-900;
+}
+
+.lexical-text-editor {
+  max-width: 100%;
+}
+
+.creator-label-color {
+  color: #F73786;
+};
+
+.followers-label-color {
+  color: #30A9F3;
+};
+
+.performance-label-color {
+  color: #6EBB5B;
+};
+
+.stats-select .material-select label {
+  display: none;
+ }
+
+ .stats-select .material-select button span {
+  margin-left: 5px;
+ }
+
+ .stats-select .material-select button div {
+  margin-right: 5px;
+ }
+
+ .dashboard-stats-counts-icons-sent-bg {
+  background-color: rgba(26, 88, 246, 0.641);
+ }
+
+ .dashboard-stats-counts-icons-bots-bg {
+  background-color: rgba(63, 195, 129, 0.66);
+ }
+
+ .dashboard-stats-counts-icons-replies-bg {
+  background-color: rgba(255, 137, 101, 0.569);
+ }
+
+ .dashboard-stats-counts-icons-engagement-bg {
+  background-color: rgba(255, 99, 133, 0.568);
+ }
+
+
+ .dashboard-stats-select label::before {
+  display: none;
+}
+
+.dashboard-stats-select + label::before,
+.dashboard-stats-select + label::after {
+  content: none; /* This will remove the content of ::before and ::after pseudo-elements */
+}
