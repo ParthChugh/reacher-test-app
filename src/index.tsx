@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import { ThemeProvider } from "@material-tailwind/react";
 import { ToastContainer } from "react-toastify";
 import reportWebVitals from "./reportWebVitals";
 import { router } from "./router";
@@ -15,27 +14,25 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <ThemeProvider>
-      <StoreProvider>
-        <Helmet>
-          <title>Reacher</title>
-          <meta name="description" content="Reacher" />
-        </Helmet>
-        <ToastContainer
-          autoClose={5000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="light"
-          position="top-right"
-        />
-        <RouterProvider router={router} />
-      </StoreProvider>
-    </ThemeProvider>
+    <StoreProvider>
+      <Helmet>
+        <title>Reacher</title>
+        <meta name="description" content="Reacher" />
+      </Helmet>
+      <ToastContainer
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+        position="top-right"
+      />
+      <RouterProvider router={router} />
+    </StoreProvider>
   </React.StrictMode>
 );
 

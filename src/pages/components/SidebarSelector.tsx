@@ -1,7 +1,6 @@
 
 
 import React, { useState } from "react";
-import { Select, Option } from "@material-tailwind/react";
 
 interface SidebarSelectorProps {
   placeHolder?: string;
@@ -30,22 +29,7 @@ const SidebarSelector: React.FC<SidebarSelectorProps> = ({
 
   return (
     <div>
-      <Select
-        size="lg"
-        onChange={(e) => handleChange(e)}
-        label={placeHolder}
-        value={value.toString()}
-        color="blue"
-      >
-        {options.map((option) => (
-          <Option 
-            key={option.value} 
-            value={option.value.toString()}
-            >
-            {option.label}
-          </Option>
-        ))}
-      </Select>
+
     </div>
   );
 };

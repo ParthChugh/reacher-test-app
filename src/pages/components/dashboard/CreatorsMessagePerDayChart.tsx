@@ -1,7 +1,6 @@
 
 
 import { Suspense, lazy } from 'react';
-import { Spinner } from "@material-tailwind/react";
 
 // Dynamically import ReactApexChart only on the client-side
 
@@ -56,7 +55,7 @@ const CreatorsMessagePerDayChart = ({ categories, seriesData, title, label }) =>
             <Suspense
               fallback={
                 <div className="h-80 flex justify-center items-center">
-                  <Spinner className="h-16 w-16" color="light-blue" />
+                
                 </div>
               }
             >

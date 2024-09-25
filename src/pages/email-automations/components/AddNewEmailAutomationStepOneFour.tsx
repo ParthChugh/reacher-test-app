@@ -1,6 +1,5 @@
 import React from 'react';
 import { Form, Formik, FormikValues } from "formik";
-import { Spinner } from "@material-tailwind/react";
 import { useAppSelector } from '../../hooks';
 import HtmlContent from './HtmlContent';
 
@@ -56,7 +55,6 @@ const AddNewEmailAutomationStepOneFour: React.FC<AddNewEmailAutomationStepOneFou
                   >
                   {isSubmitting ? (
                       <div className="flex items-center justify-center mr-3">
-                      <Spinner className="h-5 w-5" color="light-blue" />
                       </div>
                   ) : null}
 

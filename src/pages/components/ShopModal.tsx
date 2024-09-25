@@ -6,7 +6,6 @@ import { useAppDispatch, useAppSelector } from '../hooks';
 import { clearSelectedStoreId, createShop, setSelectedStoreName } from '../store/shops';
 import TextError from './forms/TextError';
 import WelcomeModal from './WelcomeModal';
-import { Select, Option } from '@material-tailwind/react';  // Make sure to import Option
 import { clearSubscriptions } from '../store/subscriptions';
 
 interface ShopModalProps {
@@ -105,22 +104,6 @@ const ShopModal: React.FC<ShopModalProps> = ({
                 />
                 {error && <TextError>{error}</TextError>}
                 <h3 className="text-lg font-semibold text-black mb-3 mt-2">Shop Region</h3>
-                <Select
-                    size="lg"
-                    onChange={(e) => handleRegionChange(e)}
-                    label="Selected Region"
-                    value={shopRegion}
-                    color="blue"
-                >
-                    {regionOptions.map((option) => (
-                        <Option 
-                            key={option.value} 
-                            value={option.value}
-                        >
-                            {option.label}
-                        </Option>
-                    ))}
-                </Select>
                 <div className={`flex ${isInitialShop ? 'justify-end' : 'justify-between'} mb-4 w-full mt-8`}>
                     {!isInitialShop && <button
                         className=" bg-black hover:bg-gray-900 text-white font-semibold py-3 px-4 rounded-md focus:outline-none focus:shadow-outline"

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Field, Form, Formik, FormikValues } from "formik";
 import * as Yup from "yup";
-import { Spinner } from "@material-tailwind/react";
 import { MdTipsAndUpdates } from 'react-icons/md';
 import { FaTimes } from 'react-icons/fa';
 
@@ -268,7 +267,6 @@ const AddNewAutomationStepOneFour: React.FC<AddNewAutomationStepOneFourProps> = 
               >
                 {isSubmitting ? (
                   <div className="flex items-center justify-center mr-3">
-                    <Spinner className="h-5 w-5" color="light-blue" />
                   </div>
                 ) : null}
 

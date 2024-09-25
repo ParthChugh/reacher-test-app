@@ -4,7 +4,6 @@
 
 
 import { useState } from 'react';
-import { Input, Button, List, ListItem } from '@material-tailwind/react';
 import TextError from './TextError';
 
 interface AddToListProps {
@@ -74,49 +73,10 @@ const AddToList: React.FC<AddToListProps> = ({
   return (
     <div>
       <div onKeyDown={handleKeyDown} className="flex items-center space-x-2">
-            <Input 
-            type="text" 
-            value={inputValue} 
-            onChange={(e) => handleInputChange(e.target.value)}
-            label={label}
-            labelProps={{
-                className: "hidden",
-            }}
-            placeholder={placeHolder}
-            variant="outlined"
-            color="gray"
-            size="lg"
-            disabled={disabled}
-            className="!border !border-gray-200 placeholder:text-gray-400 placeholder:opacity-100 appearance-none border rounded-md w-full py-4 px-3 text-gray-900 leading-tight focus:outline-none focus:shadow-outline"
-            />
-            <Button
-                onClick={handleAddClick}
-                color="blue"
-                variant="filled"
-                size="lg"
-                disabled={disabled}
-                className="bg-white automation-add-new-button-bg hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-md transition duration-300 ease-in-out"
-            >
-                Add
-            </Button>
+           
       </div>
       {error && <TextError>{error}</TextError>}
-      <List>
-        {items.map((item, index) => (
-          <ListItem key={index} className="bg-white flex justify-between items-center !border !border-gray-200 rounded-md my-1 p-2">
-            {"Product ID: " + item}
-            <Button
-              onClick={() => handleDeleteClick(index)}
-              color="red"
-              variant="filled"
-              size="sm"
-            >
-              Delete
-            </Button>
-          </ListItem>
-        ))}
-      </List>
-
+    
     </div>
   );
 }

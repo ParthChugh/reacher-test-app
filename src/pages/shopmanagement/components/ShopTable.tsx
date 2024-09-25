@@ -1,6 +1,5 @@
 
 
-import { Spinner } from "@material-tailwind/react";
 import React from "react";
 
 interface TableCell {
@@ -42,7 +41,6 @@ const ShopTable: React.FC<ShopTableProps> = ({
       </div>
       {isLoading && !Boolean(data.length) && (
         <div className="mt-48 w-full flex justify-center">
-          <Spinner className="h-12 w-12" color="blue" />
         </div>
       )}
       {data && data.length

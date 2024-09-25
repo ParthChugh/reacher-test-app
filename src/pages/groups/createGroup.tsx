@@ -12,7 +12,7 @@ import data from "./mockData/singleColumn.json";
 import { getSelectedFilters } from "./helper";
 import CustomInput from "../../common/input";
 import CustomModal from "../../common/modal";
-import { Spinner } from "@material-tailwind/react";
+
 
 const Groups = () => {
   const navigate = useNavigate();
@@ -226,12 +226,7 @@ const Groups = () => {
         </>
       ) : (
         <div className="flex items-center justify-center mr-3">
-          <Spinner
-            className="h-5 w-5"
-            color="light-blue"
-            onPointerEnterCapture={undefined}
-            onPointerLeaveCapture={undefined}
-          />
+
         </div>
       )}
     </Layout>
