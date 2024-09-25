@@ -12,7 +12,7 @@ interface IDecoded {
   exp: number;
 }
 
-const baseURL = "https://reacherserver-reacherserver-staging.azurewebsites.net/"
+const baseURL = "https://reacher-server-staging.redbeach-f212be71.centralus.azurecontainerapps.io/"
 
 console.log('development status: ', process.env.NODE_ENV);
 console.log('baseURL', baseURL);
