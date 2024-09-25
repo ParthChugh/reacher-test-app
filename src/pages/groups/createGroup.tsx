@@ -12,7 +12,7 @@ import data from "./mockData/singleColumn.json";
 import { getSelectedFilters } from "./helper";
 import CustomInput from "../../common/input";
 import CustomModal from "../../common/modal";
-import { Spinner } from "@material-tailwind/react";
+import { Spin } from "antd";
 
 const Groups = () => {
   const navigate = useNavigate();
@@ -226,11 +226,14 @@ const Groups = () => {
         </>
       ) : (
         <div className="flex items-center justify-center mr-3">
-          <Spinner
-            className="h-5 w-5"
-            color="light-blue"
-            onPointerEnterCapture={undefined}
-            onPointerLeaveCapture={undefined}
+          <Spin
+            size="small" // Adjusts the spinner size to be similar to "h-5 w-5"
+            style={{
+              color: '#3B82F6', // Hex code for light blue; adjust as needed
+              fontSize: '20px', // Controls the spinner size
+            }}
+            onMouseEnter={() => {}} // Equivalent to onPointerEnterCapture, modify as needed
+            onMouseLeave={() => {}} // Equivalent to onPointerLeaveCapture, modify as needed
           />
         </div>
       )}

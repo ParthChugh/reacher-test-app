@@ -1,6 +1,6 @@
 
 
-import { Spinner } from "@material-tailwind/react";
+import { Spin } from "antd";
 import React from "react";
 
 interface TableCell {
@@ -42,7 +42,10 @@ const ShopTable: React.FC<ShopTableProps> = ({
       </div>
       {isLoading && !Boolean(data.length) && (
         <div className="mt-48 w-full flex justify-center">
-          <Spinner className="h-12 w-12" color="blue" />
+          <Spin
+            size="small" // This sets the size of the spinner; you can adjust it to "small", "default", or "large".
+            style={{ fontSize: '20px' }} // Adjusts the spinner size to be close to the Tailwind size (h-5 w-5).
+          />
         </div>
       )}
       {data && data.length

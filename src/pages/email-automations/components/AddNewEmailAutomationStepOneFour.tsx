@@ -1,6 +1,6 @@
 import React from 'react';
 import { Form, Formik, FormikValues } from "formik";
-import { Spinner } from "@material-tailwind/react";
+import { Spin } from "antd";
 import { useAppSelector } from '../../hooks';
 import HtmlContent from './HtmlContent';
 
@@ -56,7 +56,10 @@ const AddNewEmailAutomationStepOneFour: React.FC<AddNewEmailAutomationStepOneFou
                   >
                   {isSubmitting ? (
                       <div className="flex items-center justify-center mr-3">
-                      <Spinner className="h-5 w-5" color="light-blue" />
+                        <Spin
+                          size="small" // This sets the size of the spinner; you can adjust it to "small", "default", or "large".
+                          style={{ fontSize: '20px' }} // Adjusts the spinner size to be close to the Tailwind size (h-5 w-5).
+                        />
                       </div>
                   ) : null}
 

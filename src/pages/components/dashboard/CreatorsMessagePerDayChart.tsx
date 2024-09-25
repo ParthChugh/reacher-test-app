@@ -1,7 +1,7 @@
 
 
 import { Suspense, lazy } from 'react';
-import { Spinner } from "@material-tailwind/react";
+import { Spin } from "antd";
 
 // Dynamically import ReactApexChart only on the client-side
 
@@ -56,7 +56,10 @@ const CreatorsMessagePerDayChart = ({ categories, seriesData, title, label }) =>
             <Suspense
               fallback={
                 <div className="h-80 flex justify-center items-center">
-                  <Spinner className="h-16 w-16" color="light-blue" />
+                  <Spin
+                    size="small" // This sets the size of the spinner; you can adjust it to "small", "default", or "large".
+                    style={{ fontSize: '20px' }} // Adjusts the spinner size to be close to the Tailwind size (h-5 w-5).
+                  />
                 </div>
               }
             >

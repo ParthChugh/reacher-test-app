@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Field, Form, Formik, FormikValues } from "formik";
 import * as Yup from "yup";
-import { Spinner } from "@material-tailwind/react";
+import { Spin } from 'antd';
 import { MdTipsAndUpdates } from 'react-icons/md';
 import { FaTimes } from 'react-icons/fa';
 
@@ -268,7 +268,10 @@ const AddNewAutomationStepOneFour: React.FC<AddNewAutomationStepOneFourProps> = 
               >
                 {isSubmitting ? (
                   <div className="flex items-center justify-center mr-3">
-                    <Spinner className="h-5 w-5" color="light-blue" />
+                    <Spin
+                      size="small" // This sets the size of the spinner; you can adjust it to "small", "default", or "large".
+                      style={{ fontSize: '20px' }} // Adjusts the spinner size to be close to the Tailwind size (h-5 w-5).
+                    />
                   </div>
                 ) : null}
 

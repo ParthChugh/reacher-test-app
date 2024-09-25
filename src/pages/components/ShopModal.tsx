@@ -1,12 +1,11 @@
 
 
 import React, { useState } from 'react';
-import { Input, Modal } from 'antd';
+import { Input, Modal, Select } from 'antd';
 import { useAppDispatch, useAppSelector } from '../hooks';
 import { clearSelectedStoreId, createShop, setSelectedStoreName } from '../store/shops';
 import TextError from './forms/TextError';
 import WelcomeModal from './WelcomeModal';
-import { Select, Option } from '@material-tailwind/react';  // Make sure to import Option
 import { clearSubscriptions } from '../store/subscriptions';
 
 interface ShopModalProps {
@@ -106,19 +105,16 @@ const ShopModal: React.FC<ShopModalProps> = ({
                 {error && <TextError>{error}</TextError>}
                 <h3 className="text-lg font-semibold text-black mb-3 mt-2">Shop Region</h3>
                 <Select
-                    size="lg"
-                    onChange={(e) => handleRegionChange(e)}
-                    label="Selected Region"
+                    size="large" // Ant Design uses 'large' instead of 'lg'
+                    onChange={(value) => handleRegionChange(value)} // Ant Design passes the value directly, not the event
+                    placeholder="Selected Region" // Equivalent to the label
                     value={shopRegion}
-                    color="blue"
-                >
+                    style={{ minWidth: 200 }} // Optional, adjust width if needed
+                    >
                     {regionOptions.map((option) => (
-                        <Option 
-                            key={option.value} 
-                            value={option.value}
-                        >
-                            {option.label}
-                        </Option>
+                        <Select.Option key={option.value} value={option.value}>
+                        {option.label}
+                        </Select.Option>
                     ))}
                 </Select>
                 <div className={`flex ${isInitialShop ? 'justify-end' : 'justify-between'} mb-4 w-full mt-8`}>

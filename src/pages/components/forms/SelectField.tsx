@@ -1,7 +1,7 @@
 
 
 import React, { useState } from "react";
-import { Select, Option } from "@material-tailwind/react";
+import { Select } from "antd";
 
 interface SelectFieldProps {
   label?: string;
@@ -32,20 +32,25 @@ const SelectField: React.FC<SelectFieldProps> = ({
         <p className="block text-sm font-medium text-black mb-2"> {label} </p>
       )}
       <Select
-        size="lg"
-        onFocus={() => setLabelClassName("material-select-focus")}
-        onBlur={() => setLabelClassName("material-select-blur")}
+        size="large" // Equivalent to size="lg"
+        onFocus={() => setLabelClassName("material-select-focus")} // Handles focus event
+        onBlur={() => setLabelClassName("material-select-blur")} // Handles blur event
         onChange={handleChange}
-        label={placeHolder}
+        placeholder={placeHolder} // Acts as the label placeholder
         className={`bg-white border-gray-200 appearance-none border rounded-md w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
           selectClassName ? selectClassName : ""
         }`}
         value={value}
+        style={{
+          borderColor: '#e2e8f0', // Matches the gray-200 color
+          backgroundColor: 'white',
+          color: '#4a5568', // Matches the gray-700 text color
+        }}
       >
         {options.map((option) => (
-          <Option key={option.value} value={option.value}>
+          <Select.Option key={option.value} value={option.value}>
             {option.label}
-          </Option>
+          </Select.Option>
         ))}
       </Select>
     </div>

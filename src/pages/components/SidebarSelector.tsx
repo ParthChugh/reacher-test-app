@@ -1,7 +1,5 @@
-
-
 import React, { useState } from "react";
-import { Select, Option } from "@material-tailwind/react";
+import { Select } from "antd";
 
 interface SidebarSelectorProps {
   placeHolder?: string;
@@ -16,7 +14,6 @@ const SidebarSelector: React.FC<SidebarSelectorProps> = ({
   options,
   onChange,
 }) => {
-  
   const handleChange = (value: string) => {
     const numericValue = parseInt(value, 10);
     onChange(numericValue);
@@ -31,19 +28,16 @@ const SidebarSelector: React.FC<SidebarSelectorProps> = ({
   return (
     <div>
       <Select
-        size="lg"
-        onChange={(e) => handleChange(e)}
-        label={placeHolder}
+        size="large" // Equivalent to size="lg"
+        onChange={(value) => handleChange(value)} // Ant Design passes the value directly
+        placeholder={placeHolder} // Equivalent to label for Ant Design
         value={value.toString()}
-        color="blue"
+        style={{ minWidth: 200 }} // Optional: adjust as per your design needs
       >
         {options.map((option) => (
-          <Option 
-            key={option.value} 
-            value={option.value.toString()}
-            >
+          <Select.Option key={option.value} value={option.value.toString()}>
             {option.label}
-          </Option>
+          </Select.Option>
         ))}
       </Select>
     </div>
