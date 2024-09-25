@@ -1,0 +1,32 @@
+[
+  {
+    "key": "1",
+    "groupName": "Group name 1",
+    "groupConditions": "4 conditions set",
+    "creatorsCount": 12,
+    "lastUpdated": "2 days ago",
+    "groupGmv": "522.4K",
+    "automationStatus": "None",
+    "actions": "add"
+  },
+  {
+    "key": "2",
+    "groupName": "Group name 2",
+    "groupConditions": "4 conditions set",
+    "creatorsCount": 12,
+    "lastUpdated": "2 days ago",
+    "groupGmv": "522.4K",
+    "automationStatus": "Stopped",
+    "actions": "play"
+  },
+  {
+    "key": "3",
+    "groupName": "Group name 3",
+    "groupConditions": "3 conditions set",
+    "creatorsCount": 12,
+    "lastUpdated": "2 days ago",
+    "groupGmv": "522.4K",
+    "automationStatus": "Active",
+    "actions": "pause"
+  }
+]

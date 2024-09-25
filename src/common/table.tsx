@@ -19,6 +19,7 @@ interface CustomTableProps {
   columns: ColumnType[];
   tableClassName?: string; // Use string type for className
   rowSelection?: any
+  restProps?: any
 }
 
 const CustomTable: React.FC<CustomTableProps> = ({
@@ -26,7 +27,8 @@ const CustomTable: React.FC<CustomTableProps> = ({
   loading = false,
   columns,
   tableClassName = "",
-  rowSelection
+  rowSelection,
+  restProps = {}
 }) => {
   return (
     <Table
@@ -36,6 +38,7 @@ const CustomTable: React.FC<CustomTableProps> = ({
       pagination={{ pageSize: 5 }}
       className={tableClassName}
       rowSelection={rowSelection}
+      {...restProps}
     />
   );
 };

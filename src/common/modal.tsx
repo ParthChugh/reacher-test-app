@@ -4,14 +4,16 @@ import { Modal, Button } from "antd";
 
 interface CustomModalProps {
   visible: boolean;
-  title: string;
+  title: string | React.ReactNode;
   content: React.ReactNode;
   onCancel: () => void;
-  onConfirm: () => void;
+  onConfirm?: () => void;
   confirmText?: string;
   cancelText?: string;
   confirmButtonType?: "primary" | "default" | "dashed" | "text";
   className?: string;
+  showModalFooter?: boolean;
+  width?: number | string;
 }
 
 const CustomModal: React.FC<CustomModalProps> = ({
@@ -19,11 +21,13 @@ const CustomModal: React.FC<CustomModalProps> = ({
   title,
   content,
   onCancel,
-  onConfirm,
+  onConfirm = () => {},
   confirmText = "Confirm",
   cancelText = "Cancel",
   confirmButtonType = "primary",
   className,
+  showModalFooter = false,
+  width = 'auto'
 }) => {
   return (
     <Modal
@@ -33,16 +37,26 @@ const CustomModal: React.FC<CustomModalProps> = ({
       footer={null}
       centered
       className={`rounded-md ${className}`}
+      width={width}
     >
-      <div className="mb-4">{content}</div>
-      <div className="flex justify-end gap-2">
-        <Button onClick={onCancel} className="bg-gray-200 hover:bg-gray-300">
-          {cancelText}
-        </Button>
-        <Button type={confirmButtonType} onClick={onConfirm}>
-          {confirmText}
-        </Button>
-      </div>
+      {showModalFooter ? (
+        <>
+          <div className="mb-4">{content}</div>
+          <div className="flex justify-end gap-2">
+            <Button
+              onClick={onCancel}
+              className="bg-gray-200 hover:bg-gray-300"
+            >
+              {cancelText}
+            </Button>
+            <Button type={confirmButtonType} onClick={onConfirm}>
+              {confirmText}
+            </Button>
+          </div>
+        </>
+      ) : (
+        content
+      )}
     </Modal>
   );
 };

@@ -12,8 +12,8 @@ import SearchComponent from "../../common/search";
 import IconButton from "../../common/button";
 import Layout from "./layout";
 import CustomDrawer from "../../common/drawer";
-import CustomFilters from "./customFilters";
-import FilterFooter from "./customFilterFooter";
+import CustomFilters from "../customFilter/customFilters";
+import FilterFooter from "../customFilter/customFilterFooter";
 import initialFilters from "./mockData/filters.json";
 import data from "./mockData/creators.json";
 import {
@@ -259,40 +259,47 @@ const MyCreators = () => {
     //     key: column.field,
     //   };
     // });
-    
+
     setTableColumns(updatedColumns);
   };
 
   return (
     <Layout>
-      <CustomDrawer
+      <CustomModal
         visible={openfiltersDrawer}
-        onClose={() => {
+        onCancel={() => {
           setOpenFiltersDrawer(false);
         }}
-        Component={() => (
-          <CustomFilters filters={filters} setFilters={setFilters} />
-        )} // Pass your component here
-        Header={() => <div>More Filters</div>} // Pass your component here
-        Footer={() => (
-          <FilterFooter
-            onClearAll={() => {
-              setFilters(filters);
-              navigate(`/my-creators`, { replace: true });
-              navigate(0);
-            }}
-            onApplyFilters={() => {
-              const selectedFilters = getSelectedFilters(filters);
-              const urlParams = convertToURLSearchParams(selectedFilters);
+        title={
+          <div>
+            <div className="mb-2">More Filters</div>
+            <div className="border-b-2 border-gray-300 mb-5" />
+          </div>
+        }
+        showModalFooter={false}
+        width={700}
+        content={
+          <>
+            <CustomFilters filters={filters} setFilters={setFilters} />
+            <FilterFooter
+              onClearAll={() => {
+                setFilters(filters);
+                navigate(`/my-creators`, { replace: true });
+                navigate(0);
+              }}
+              onApplyFilters={() => {
+                const selectedFilters = getSelectedFilters(filters);
+                const urlParams = convertToURLSearchParams(selectedFilters);
 
-              // Example of how to get the string representation for a URL
-              navigate(`/my-creators?${urlParams.toString()}`, {
-                replace: true,
-              });
-              setOpenFiltersDrawer(false);
-            }}
-          />
-        )} // Pass your component here
+                // Example of how to get the string representation for a URL
+                navigate(`/my-creators?${urlParams.toString()}`, {
+                  replace: true,
+                });
+                setOpenFiltersDrawer(false);
+              }}
+            />
+          </>
+        }
       />
       <div className="flex justify-between items-center">
         <h3 className="font-semibold text-xl">My Creators</h3>

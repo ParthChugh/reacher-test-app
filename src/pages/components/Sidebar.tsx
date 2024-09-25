@@ -7,6 +7,7 @@ import { MdAddShoppingCart } from "react-icons/md";
 import { GrLineChart, GrHelpBook } from "react-icons/gr";
 import { PiLightbulbFilamentFill } from "react-icons/pi";
 import { FaRegUser } from "react-icons/fa6";
+import { FaUsers } from 'react-icons/fa';
 import { HiOutlineLogout } from "react-icons/hi";
 import { RiUser2Fill } from "react-icons/ri";
 import { IoMdMailUnread } from "react-icons/io";
@@ -63,12 +64,12 @@ const crmItems = [
     path: "/my-creators",
     icon: <FaRegUser size={20} />,
   },
-  // {
-  //   id: "groups",
-  //   label: "Groups",
-  //   path: "/groups",
-  //   icon: <IoMdMailUnread size={20} />,
-  // }
+  {
+    id: "groups",
+    label: "Groups",
+    path: "/groups",
+    icon: <FaUsers size={20} />,
+  }
 ]
 
 const Sidebar: React.FC = () => {

@@ -1,0 +1,68 @@
+{
+  "status": {
+    "label": "Status",
+    "type": "checkbox",
+    "options": [
+      { "label": "Messaged", "value": "messaged", "selected": false },
+      { "label": "Replied", "value": "replied", "selected": false },
+      {
+        "label": "Showcasing Product",
+        "value": "showcasing_product",
+        "selected": false
+      },
+      {
+        "label": "Sample Requested",
+        "value": "sample_requested",
+        "selected": false
+      },
+      { "label": "Ready to Ship", "value": "ready_to_ship", "selected": false },
+      {
+        "label": "Sample Shipped",
+        "value": "sample_shipped",
+        "selected": false
+      },
+      {
+        "label": "Content Pending",
+        "value": "content_pending",
+        "selected": false
+      },
+      { "label": "Posted Videos", "value": "posted_videos", "selected": false },
+      { "label": "Sold Products", "value": "sold_products", "selected": false }
+    ]
+  },
+  "group_gmv": {
+    "label": "Group GMV",
+    "type": "checkbox",
+    "options": [
+      { "label": "$0-$50", "value": "0_50", "selected": false },
+      { "label": "$50-$100", "value": "50_100", "selected": false },
+      { "label": "$100-$1K", "value": "100_1k", "selected": false },
+      { "label": "$1K-$5K", "value": "1k_5k", "selected": false },
+      { "label": "$5K-$10K", "value": "5k_10k", "selected": false },
+      { "label": "$10K-$25K", "value": "10k_25k", "selected": false },
+      { "label": "$25K-$50K", "value": "25k_50k", "selected": false },
+      { "label": "$50K-$100K", "value": "50k_100k", "selected": false },
+      { "label": "$100K-$250K", "value": "100k_250k", "selected": false },
+      { "label": "$250K-$500K", "value": "250k_500k", "selected": false },
+      { "label": "$1M+", "value": "1m_plus", "selected": false }
+    ]
+  },
+  "automation_status": {
+    "label": "Automation Status",
+    "type": "checkbox",
+    "options": [
+      { "label": "None", "value": "none", "selected": false },
+      { "label": "Stopped", "value": "stopped", "selected": false },
+      { "label": "Active", "value": "active", "selected": false }
+    ]
+  },
+  "products": {
+    "label": "Products",
+    "type": "dropdown_multiselect",
+    "options": [
+      { "label": "Product A", "value": "product_a", "selected": false },
+      { "label": "Product B", "value": "product_b", "selected": false },
+      { "label": "Product C", "value": "product_c", "selected": false }
+    ]
+  }
+}

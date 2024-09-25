@@ -16,6 +16,7 @@ const BatchRemoveTagsModal: React.FC<BatchRemoveTagsModalProps> = ({
   return (
     <CustomModal
       visible={visible}
+      showModalFooter
       title="Batch remove tags"
       content={
         <p className="text-gray-500">

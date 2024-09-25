@@ -1,5 +1,5 @@
 import React from "react";
-import { Input, Select } from "antd";
+import { Checkbox, Input, Select } from "antd";
 
 const { Option } = Select;
 
@@ -11,9 +11,18 @@ interface FilterOption {
 
 interface FilterGroup {
   label: string;
+  name?: string;
   options?: FilterOption[];
-  type?: "checkbox" | "single" | "text" | "select" | "dropdown_multiselect";
+  type?:
+    | "checkbox"
+    | "single"
+    | "text"
+    | "select"
+    | "dropdown_multiselect"
+    | "checkbox-single"
+    | "checkbox-label";
   value?: string;
+  selected?: boolean;
 }
 
 interface Filters {
@@ -29,14 +38,19 @@ interface Filters {
 interface CustomFiltersProps {
   filters: Filters;
   setFilters: React.Dispatch<React.SetStateAction<Filters>>;
+  labelStyles: any;
+  optonClassName?: any;
+  selectedClassName?: any;
 }
 
 const CustomFilters: React.FC<CustomFiltersProps> = ({
   filters,
   setFilters,
+  labelStyles,
+  optonClassName,
+  selectedClassName,
 }) => {
   // Handle item click change
-
   const handleItemClick = (key: keyof Filters, value: string) => {
     setFilters((prevFilters: Filters) => ({
       ...prevFilters,
@@ -89,8 +103,21 @@ const CustomFilters: React.FC<CustomFiltersProps> = ({
     }));
   };
 
+  const handleCheckboxLabelChange = (key: keyof Filters, checked: boolean) => {
+    setFilters((prevFilters: Filters) => ({
+      ...prevFilters,
+      [key]: {
+        ...prevFilters[key],
+        selected: checked,
+      },
+    }));
+  };
+
   // Render the appropriate component based on the filter type
-  const renderFilterComponent = (filter: FilterGroup, filterKey: keyof Filters) => {
+  const renderFilterComponent = (
+    filter: FilterGroup,
+    filterKey: keyof Filters
+  ) => {
     switch (filter.type) {
       case "checkbox":
         return (
@@ -98,9 +125,9 @@ const CustomFilters: React.FC<CustomFiltersProps> = ({
             {filter.options?.map((option) => (
               <div
                 key={option.value}
-                className={`px-3 py-2 border rounded cursor-pointer transition-colors ${
+                className={`px-3 py-2 border rounded cursor-pointer transition-colors ${optonClassName} ${
                   option.selected
-                    ? "bg-blue-500 text-white border-blue-500"
+                    ? `bg-black text-white border-black ${selectedClassName}`
                     : "bg-white text-black border-gray-300 hover:bg-gray-100"
                 }`}
                 onClick={() => handleItemClick(filterKey, option.value)}
@@ -110,15 +137,54 @@ const CustomFilters: React.FC<CustomFiltersProps> = ({
             ))}
           </div>
         );
+
+      case "checkbox-single":
+        return (
+          <div className="flex flex-wrap gap-2">
+            {filter.options?.map((option) => (
+              <div
+                key={option.value}
+                className={`px-3 py-2 border rounded cursor-pointer transition-colors ${optonClassName} ${
+                  option.selected
+                    ? `bg-black text-white border-black ${selectedClassName}`
+                    : "bg-white text-black border-gray-300 hover:bg-gray-100"
+                }`}
+                onClick={() =>
+                  handleSingleSelectChange(filterKey, option.value)
+                }
+              >
+                {option.label}
+              </div>
+            ))}
+          </div>
+        );
+      case "checkbox-label":
+        return (
+          <Checkbox
+            checked={filter.selected}
+            onChange={(e) =>
+              handleCheckboxLabelChange(filterKey, e.target.checked)
+            }
+          >
+            {filter.name}
+          </Checkbox>
+        );
       case "single":
         return (
           <Select
             value={filter.options?.find((option) => option.selected)?.value}
             onChange={(value) => handleSingleSelectChange(filterKey, value)}
-            className="w-full"
           >
             {filter.options?.map((option) => (
-              <Option key={option.value} value={option.value}>
+              <Option
+                key={option.value}
+                value={option.value}
+                className={`w-full ${optonClassName} ${
+                  filter.selected
+                    ? `bg-black text-white border-black ${selectedClassName}`
+                    : "bg-white text-black border-gray-300 hover:bg-gray-100"
+                }`}
+              >
                 {option.label}
               </Option>
             ))}
@@ -129,19 +195,35 @@ const CustomFilters: React.FC<CustomFiltersProps> = ({
           <Input
             value={filter.value}
             onChange={(e) => handleInputChange(filterKey, e.target.value)}
-            className="w-full"
+            className={`w-full ${optonClassName} ${
+              filter.selected
+                ? `bg-black text-white border-black ${selectedClassName}`
+                : "bg-white text-black border-gray-300 hover:bg-gray-100"
+            }`}
           />
         );
       case "dropdown_multiselect":
         return (
           <Select
             mode="multiple"
-            value={filter.options?.filter((option) => option.selected).map((option) => option.value)}
-            onChange={(values) => handleMultiSelectChange(filterKey, values as string[])}
+            value={filter.options
+              ?.filter((option) => option.selected)
+              .map((option) => option.value)}
+            onChange={(values) =>
+              handleMultiSelectChange(filterKey, values as string[])
+            }
             className="w-full"
           >
             {filter.options?.map((option) => (
-              <Option key={option.value} value={option.value}>
+              <Option
+                key={option.value}
+                value={option.value}
+                className={`w-full ${optonClassName} ${
+                  filter.selected
+                    ? `bg-black text-white border-black ${selectedClassName}`
+                    : "bg-white text-black border-gray-300 hover:bg-gray-100"
+                }`}
+              >
                 {option.label}
               </Option>
             ))}
@@ -160,7 +242,9 @@ const CustomFilters: React.FC<CustomFiltersProps> = ({
 
         return (
           <div key={filterKey} className="mb-4">
-            <h4 className="mb-2 font-medium">{filter.label}</h4>
+            <h4 className="mb-2 font-medium" style={labelStyles}>
+              {filter.label}
+            </h4>
             {renderFilterComponent(filter, filterKey)}
           </div>
         );

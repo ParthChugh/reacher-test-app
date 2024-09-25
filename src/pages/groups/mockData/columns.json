@@ -1,0 +1,98 @@
+[
+  {
+    "label": "Average video views",
+    "field": "averageVideoViews",
+    "selected": false,
+    "order": 13
+  },
+  {
+    "label": "Average engagement rate",
+    "field": "averageEngagementRate",
+    "selected": false,
+    "order": 14
+  },
+  {
+    "label": "Creator name",
+    "field": "creatorName",
+    "selected": true,
+    "order": 1
+  },
+  {
+    "label": "Date of product delivery",
+    "field": "dateOfProductDelivery",
+    "selected": false,
+    "order": 10
+  },
+  {
+    "label": "GMV",
+    "field": "gmv",
+    "selected": true,
+    "order": 8
+  },
+  {
+    "label": "Livestream",
+    "field": "livestreams",
+    "selected": true,
+    "order": 6
+  },
+  {
+    "label": "Likes",
+    "field": "likes",
+    "selected": false,
+    "order": 12
+  },
+  {
+    "label": "Name of Product",
+    "field": "productName",
+    "selected": true,
+    "order": 3
+  },
+  {
+    "label": "No. of sales",
+    "field": "numberOfSales",
+    "selected": false,
+    "order": 11
+  },
+  {
+    "label": "Status",
+    "field": "status",
+    "selected": true,
+    "order": 4
+  },
+  {
+    "label": "Tags",
+    "field": "tags",
+    "selected": true,
+    "order": 2
+  },
+  {
+    "label": "Video posted",
+    "field": "videoPosted",
+    "selected": true,
+    "order": 5
+  },
+  {
+    "label": "Video comments",
+    "field": "videoComments",
+    "selected": false,
+    "order": 15
+  },
+  {
+    "label": "Views",
+    "field": "views",
+    "selected": false,
+    "order": 16
+  },
+  {
+    "label": "Video post date",
+    "field": "videoPostDate",
+    "selected": false,
+    "order": 9
+  },
+  {
+    "label": "Video/Live GPM",
+    "field": "videoLiveGPM",
+    "selected": false,
+    "order": 17
+  }
+]

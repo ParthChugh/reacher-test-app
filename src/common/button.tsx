@@ -8,6 +8,8 @@ interface IconButtonProps {
   rightIcon?: React.ReactNode; // optional icon if you want to customize it
   buttonClass?: string; // optional className if you want to customize it
   textClass?: string; // optional className if you want to customize it
+  style?: any; // optional className if you want to customize it
+  restProps?: any; // optional className if you want to customize it
 }
 
 const IconButton: React.FC<IconButtonProps> = ({
@@ -17,14 +19,17 @@ const IconButton: React.FC<IconButtonProps> = ({
   buttonClass = "",
   textClass = "",
   rightIcon = null,
+  style = {},
+  restProps = {},
 }) => {
-
   return (
     <Button
       type="primary"
       onClick={onClick}
       icon={icon} // icon will appear to the left by default
       className={`flex items-center gap-2 ${buttonClass}`}
+      style={style}
+      {...restProps}
     >
       <div className={`${textClass}`}>
         {label}

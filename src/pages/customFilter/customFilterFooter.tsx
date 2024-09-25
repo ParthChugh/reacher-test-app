@@ -11,14 +11,14 @@ const FilterFooter: React.FC<FilterFooterProps> = ({
   onApplyFilters,
 }) => {
   return (
-    <div className="flex justify-end gap-4 mt-4">
+    <div className="flex justify-end gap-4 mt-10 w-full">
       <Button
         onClick={onClearAll}
-        className="bg-white text-black border-gray-300 hover:bg-gray-100"
+        className="bg-white text-black border-gray-300 hover:bg-gray-100 w-full"
       >
         Clear All
       </Button>
-      <Button type="primary" onClick={onApplyFilters}>
+      <Button className="w-full bg-black text-white w-full" type="primary" onClick={onApplyFilters}>
         Apply Filters
       </Button>
     </div>

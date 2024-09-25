@@ -1,0 +1,106 @@
+{
+  "1": {
+    "details": [
+      {
+        "key": "1",
+        "creator": {
+          "name": "tiktokid",
+          "description": "followers: 1M",
+          "profile": "https://jodilogik.com/wp-content/uploads/2016/05/people.png"
+        },
+        "tags": ["Great Content", "Favourite"],
+        "status": "Content Pending",
+        "gmv": "522.4K",
+        "dateEntered": "2 days ago"
+      },
+      {
+        "key": "2",
+        "creator": {
+          "name": "tiktokid",
+          "description": "followers: 1M",
+          "profile": "https://jodilogik.com/wp-content/uploads/2016/05/people.png"
+        },
+        "tags": ["Top Creator List"],
+        "status": "Content Pending",
+        "gmv": "522.4K",
+        "dateEntered": "2 days ago"
+      }
+    ]
+  },
+  "2": {
+    "automation": {
+      "status": true,
+      "types": [
+        { "title": "Message type:", "value": "Message + Target collaboration" },
+        { "title": "Creators reached:", "value": 8 },
+        { "title": "Creators remaining:", "value": 4 },
+        { "title": "Replies:", "value": 6 },
+        { "title": "Date created:", "value": "2024-09-09" }
+      ]
+    },
+    "details": [
+      {
+        "key": "1",
+        "creator": {
+          "name": "tiktokid",
+          "description": "followers: 1M",
+          "profile": "https://jodilogik.com/wp-content/uploads/2016/05/people.png"
+        },
+        "tags": ["Great Content", "Favourite"],
+        "status": "Content Pending",
+        "gmv": "522.4K",
+        "dateEntered": "2 days ago"
+      },
+      {
+        "key": "2",
+        "creator": {
+          "name": "tiktokid",
+          "description": "followers: 1M",
+          "profile": "https://jodilogik.com/wp-content/uploads/2016/05/people.png"
+        },
+        "tags": ["Top Creator List"],
+        "status": "Content Pending",
+        "gmv": "522.4K",
+        "dateEntered": "2 days ago"
+      }
+    ]
+  },
+  "3": {
+    "automation": {
+      "status": false,
+      "types": [
+        { "title": "Message type:", "value": "Message + Target collaboration" },
+        { "title": "Creators reached:", "value": 8 },
+        { "title": "Creators remaining:", "value": 4 },
+        { "title": "Replies:", "value": 6 },
+        { "title": "Date created:", "value": "2024-09-09" }
+      ]
+    },
+    "details": [
+      {
+        "key": "1",
+        "creator": {
+          "name": "tiktokid",
+          "description": "followers: 1M",
+          "profile": "https://jodilogik.com/wp-content/uploads/2016/05/people.png"
+        },
+        "tags": ["Great Content", "Favourite"],
+        "status": "Content Pending",
+        "gmv": "522.4K",
+        "dateEntered": "2 days ago"
+      },
+      {
+        "key": "2",
+        "creator": {
+          "name": "tiktokid",
+          "description": "followers: 1M",
+          "profile": "https://jodilogik.com/wp-content/uploads/2016/05/people.png"
+        },
+        "tags": ["Top Creator List"],
+        "status": "Content Pending",
+        "gmv": "522.4K",
+        "dateEntered": "2 days ago"
+      }
+    ]
+  }
+}

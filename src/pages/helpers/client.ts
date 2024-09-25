@@ -12,7 +12,9 @@ interface IDecoded {
   exp: number;
 }
 
-const baseURL = "https://reacher-server-staging.redbeach-f212be71.centralus.azurecontainerapps.io/"
+const baseURL = process.env.NODE_ENV === 'development' 
+  ? process.env.REACT_APP_LOCAL_SERVER_URL 
+  : process.env.REACT_APP_SERVER_URL;
 
 console.log('development status: ', process.env.NODE_ENV);
 console.log('baseURL', baseURL);

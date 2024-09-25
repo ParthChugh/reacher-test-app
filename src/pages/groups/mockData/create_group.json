@@ -5,11 +5,27 @@
     "options": [
       { "label": "Messaged", "value": "messaged", "selected": false },
       { "label": "Replied", "value": "replied", "selected": false },
-      { "label": "Showcasing Product", "value": "showcasing_product", "selected": false },
-      { "label": "Sample Requested", "value": "sample_requested", "selected": false },
+      {
+        "label": "Showcasing Product",
+        "value": "showcasing_product",
+        "selected": false
+      },
+      {
+        "label": "Sample Requested",
+        "value": "sample_requested",
+        "selected": false
+      },
       { "label": "Ready to Ship", "value": "ready_to_ship", "selected": false },
-      { "label": "Sample Shipped", "value": "sample_shipped", "selected": false },
-      { "label": "Content Pending", "value": "content_pending", "selected": false },
+      {
+        "label": "Sample Shipped",
+        "value": "sample_shipped",
+        "selected": false
+      },
+      {
+        "label": "Content Pending",
+        "value": "content_pending",
+        "selected": false
+      },
       { "label": "Posted Videos", "value": "posted_videos", "selected": false },
       { "label": "Sold Products", "value": "sold_products", "selected": false }
     ]
@@ -31,20 +47,6 @@
       { "label": "1M+", "value": "1m_plus", "selected": false }
     ]
   },
-  "total_gmv": {
-    "label": "Total GMV",
-    "type": "checkbox",
-    "options": [
-      { "label": "$0-$50", "value": "0_50", "selected": false },
-      { "label": "$50-$100", "value": "50_100", "selected": false },
-      { "label": "$100-$1K", "value": "100_1k", "selected": false },
-      { "label": "$1K-$5K", "value": "1k_5k", "selected": false },
-      { "label": "$5K-$10K", "value": "5k_10k", "selected": false },
-      { "label": "$10K-$25K", "value": "10k_25k", "selected": false },
-      { "label": "$25K-$50K", "value": "25k_50k", "selected": false },
-      { "label": "$50K+", "value": "50k_plus", "selected": false }
-    ]
-  },
   "shop_gmv": {
     "label": "Shop GMV",
     "type": "checkbox",
@@ -60,7 +62,7 @@
     ]
   },
   "creator_fulfillment_rate": {
-    "label": "Creator Fulfillment Rate (CFR)",
+    "label": "Creator Fulfillment Rate",
     "type": "checkbox",
     "options": [
       { "label": "0-20", "value": "0_20", "selected": false },
@@ -79,25 +81,13 @@
       { "label": "Product C", "value": "product_c", "selected": false }
     ]
   },
-  "gender": {
-    "label": "Gender",
-    "type": "checkbox-single",
-    "options": [
-      { "label": "All", "value": "all", "selected": false },
-      { "label": "Male", "value": "male", "selected": false },
-      { "label": "Female", "value": "female", "selected": false }
-    ]
-  },
   "tags": {
     "label": "Tags",
     "type": "dropdown_multiselect",
     "options": [
-      { "label": "Great Content", "value": "great_content", "selected": false },
-      { "label": "Favourite", "value": "favourite", "selected": false },
-      { "label": "Trending", "value": "trending", "selected": false },
-      { "label": "New", "value": "new", "selected": false },
-      { "label": "Top Rated", "value": "top_rated", "selected": false },
-      { "label": "Discounted", "value": "discounted", "selected": false }
+      { "label": "Tag A", "value": "tag_a", "selected": false },
+      { "label": "Tag B", "value": "tag_b", "selected": false },
+      { "label": "Tag C", "value": "tag_c", "selected": false }
     ]
   }
 }

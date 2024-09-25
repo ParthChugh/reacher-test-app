@@ -8,6 +8,9 @@ import MyAccount from './pages/myaccount';
 import AIAssistant from './pages/aiassistant';
 import Automations from './pages/automations';
 import MyCreators from './pages/my-creators';
+import Groups from './pages/groups';
+import SingleGroup from './pages/groups/singleGroup';
+import CreateGroup from './pages/groups/createGroup';
 import SelectPlan from './pages/select-plan';
 import PaymentSuccess from './pages/paymentsuccess';
 import ShopManagement from './pages/shopmanagement';
@@ -43,6 +46,18 @@ export const router = createBrowserRouter([
   {
     path: "/my-creators",
     element: <MyCreators />,
+  },
+  {
+    path: "/groups",
+    element: <Groups />,
+  },
+  {
+    path: "/groups/create",
+    element: <CreateGroup />,
+  },
+  {
+    path: "/groups/:id",
+    element: <SingleGroup />,
   },
   {
     path: "/select-plan",

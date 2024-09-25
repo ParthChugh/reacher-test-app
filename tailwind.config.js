@@ -18,11 +18,15 @@ module.exports = withMT({
       },
       colors: {
         'ant-input-border': '#d9d9d9', // Add custom color
-        'gray-20': '#333333'
+        'gray-20': '#333333',
+        'grayCustom': '#828282',
       },
       opacity: {
         '50': '.50',
-      }
+      },
+      fontSize: {
+        'custom-16': '16px',
+      },
     },
   },
   plugins: [],
